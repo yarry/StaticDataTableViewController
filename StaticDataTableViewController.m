@@ -402,6 +402,16 @@
     
 }
 
+- (NSIndexPath *)indexPathForCell:(UITableViewCell*)cell
+{
+    OriginalRow * row = [self.originalTable originalRowWithTableViewCell:cell];
+    if(row.hidden) {
+        return nil;
+    }
+    return [self.originalTable indexPathForInsertingOriginalRow:row];
+}
+
+
 #pragma mark - TableView Data Source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

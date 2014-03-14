@@ -35,4 +35,6 @@
 // always use this method for reload
 - (void)reloadDataAnimated:(BOOL)animated;
 
+- (NSIndexPath *)indexPathForCell:(UITableViewCell*)cell;
+
 @end
